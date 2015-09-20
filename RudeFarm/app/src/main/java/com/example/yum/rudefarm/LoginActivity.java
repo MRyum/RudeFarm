@@ -1,4 +1,4 @@
-﻿package com.example.yum.rudefarm;
+package com.example.yum.rudefarm;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -82,8 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        super.onPause();
-        background = (ImageView) findViewById(R.id.background);
+        super.onPause();/*
         ((BitmapDrawable) background.getDrawable()).getBitmap().recycle();
         ImageView[] dum = {cloud1, cloud2, cloud3};
         for (int i = 0; i < dum.length; i++) {
@@ -94,29 +92,14 @@ public class LoginActivity extends AppCompatActivity {
                 bitmap = null;
             }
             d.setCallback(null);
-        }
-    }
-
-    protected void drawBigImage(ImageView imageView, int resId) {
-        try {
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.RGB_565;
-            options.inSampleSize = 1;
-            options.inPurgeable = true;
-            Bitmap src = BitmapFactory.decodeResource(getResources(), resId, options);
-            Bitmap resize = Bitmap.createScaledBitmap(src, options.outWidth, options.outHeight, true);
-            imageView.setImageBitmap(resize);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Log.e("sibalerror", e.toString());
-        }
+        }*/
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-            setContentView(R.layout.profile);
+            setContentView(R.layout.login);
         } catch (Exception e) {
             Log.e("sibal", e.toString());
         }
@@ -130,13 +113,13 @@ public class LoginActivity extends AppCompatActivity {
         logbtn = (Button) findViewById(R.id.Loginbtn);
         Drawable buttonBg = logbtn.getBackground();
         buttonBg.setAlpha(50);
-        webServerSender = new WebServerSender("http://linux.kim82536.pe.kr:5000", "profile", "POST");
+        webServerSender = new WebServerSender("http://linux.kim82536.pe.kr:5000", "login", "POST");
         Join = (TextView) findViewById(R.id.join);
         Join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myintent;
-                myintent = new Intent(getApplicationContext(), JoinFragment.class);
+                myintent = new Intent(getApplicationContext(), JoinActivity.class);
                 startActivity(myintent);
             }
         });

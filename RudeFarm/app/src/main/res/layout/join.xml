@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/joinbg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/login_background" />
+
+    <ImageView
+        android:id="@+id/login_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/login_logo" />
+
+
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="310dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/login_logo"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="이름"
+            android:textColor="#fff"
+            android:textSize="9dp" />
+
+        <EditText
+            android:id="@+id/id_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textSize="10dp"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ymd"
+        android:layout_alignTop="@+id/ymd"
+        android:text="생년월일"
+        android:textColor="#fff"
+        android:textSize="9dp" />
+
+    <RelativeLayout
+        android:id="@+id/ymd"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:paddingTop="10dp">
+
+        <Spinner
+            android:id="@+id/y_sp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"></Spinner>
+
+        <Spinner
+            android:id="@+id/m_sp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/y_sp"></Spinner>
+
+        <Spinner
+            android:id="@+id/d_sp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/m_sp"></Spinner>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/email"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/ymd"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="이메일(아이디)"
+            android:textColor="#fff"
+            android:textSize="9dp" />
+
+        <EditText
+            android:id="@+id/email_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:maxLength="20"
+            android:textSize="10dp"
+            android:singleLine="true"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pw"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="비밀번호"
+            android:textColor="#fff"
+            android:textSize="9dp" />
+
+        <EditText
+            android:id="@+id/pw_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:inputType="textPassword"
+            android:textSize="10dp"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="#fff" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sex"
+        android:orientation="vertical"
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pw"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="성별"
+            android:textColor="#fff"
+            android:textSize="9dp" />
+
+        <Spinner
+            android:id="@+id/sex_sp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"></Spinner>
+    </LinearLayout>
+    <Button
+        android:id="@+id/Joinbtn"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/sex"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="#131D49"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+</RelativeLayout>
