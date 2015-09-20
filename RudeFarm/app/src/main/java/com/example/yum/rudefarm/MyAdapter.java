@@ -1,21 +1,11 @@
 package com.example.yum.rudefarm;
 
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
-import static android.support.v7.widget.RecyclerView.*;
 
 /**
  * Created by hp1 on 28-12-2014.
@@ -91,7 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         if (viewType == TYPE_ITEM) {
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_row, parent, false); //Inflating the layout
@@ -115,12 +105,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, final int position) {
+    public void onBindViewHolder(final MyAdapter.ViewHolder holder, final int position) {
         if (holder.Holderid == 1) {
             holder.textView.setText(Text[position - 1]);
 //            Typeface typeface = Typeface.createFromAsset(holder.v.getContext().getAssets(), "BM-JUA.ttf");
 //            holder.textView.setTypeface(typeface);
-
             Typefaces.setFont("KoPubDotumLight.ttf", holder.textView, holder.itemView);
             holder.imageView.setImageResource(Img[position - 1]);
 

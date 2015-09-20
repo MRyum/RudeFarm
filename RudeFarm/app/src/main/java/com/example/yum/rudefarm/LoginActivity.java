@@ -1,15 +1,21 @@
 package com.example.yum.rudefarm;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.os.Handler;
+import android.os.Message;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends AppCompatActivity {
     private Button logbtn;
     private EditText idE;
     public String id;
@@ -31,46 +37,114 @@ public class LoginActivity extends ActionBarActivity {
     String a;
     WebServerSender webServerSender;
     TextView Join;
-    ImageView loginlogo;
+    ImageView cloud1;
+    ImageView cloud2;
+    ImageView cloud3;
+    ImageView background;
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            updateThread();
+        }
+    };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mHandler.sendMessage(mHandler.obtainMessage());
+            }
+        });
+
+        thread.start();
+    }
+
+    private void updateThread() {
+        TranslateAnimation moveAnimation = new TranslateAnimation(-300, 800, 0, 0);
+        moveAnimation.setDuration(30000);
+        moveAnimation.setRepeatCount(Animation.INFINITE);
+        cloud1.setAnimation(moveAnimation);
+
+        moveAnimation = new TranslateAnimation(-500, 900, 0, 0);
+        moveAnimation.setDuration(37000);
+        moveAnimation.setRepeatCount(Animation.INFINITE);
+        cloud2.setAnimation(moveAnimation);
+
+        moveAnimation = new TranslateAnimation(-600, 1200, 0, 0);
+        moveAnimation.setDuration(28000);
+        moveAnimation.setRepeatCount(Animation.INFINITE);
+        cloud3.setAnimation(moveAnimation);
+
+    }
+
+    @Override
+    protected void onPause() {
+        background = (ImageView) findViewById(R.id.background);
+        ((BitmapDrawable) background.getDrawable()).getBitmap().recycle();
+        ImageView[] dum = {cloud1, cloud2, cloud3};
+        for (int i = 0; i < dum.length; i++) {
+            Drawable d = dum[i].getDrawable();
+            if (d instanceof BitmapDrawable) {
+                Bitmap bitmap = ((BitmapDrawable) d).getBitmap();
+                bitmap.recycle();
+                bitmap = null;
+            }
+            d.setCallback(null);
+        }
+    }
+
+    protected void drawBigImage(ImageView imageView, int resId) {
+        try {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.RGB_565;
+            options.inSampleSize = 1;
+            options.inPurgeable = true;
+            Bitmap src = BitmapFactory.decodeResource(getResources(), resId, options);
+            Bitmap resize = Bitmap.createScaledBitmap(src, options.outWidth, options.outHeight, true);
+            imageView.setImageBitmap(resize);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("sibalerror", e.toString());
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
-
-        TranslateAnimation moveAnimation = new TranslateAnimation(
-                Animation.RELATIVE_TO_SELF, 0.0f,
-                Animation.RELATIVE_TO_SELF, 1.0f,
-                Animation.RELATIVE_TO_SELF, 0.0f,
-                Animation.RELATIVE_TO_SELF, 0.0f);
-        moveAnimation.setRepeatCount(Animation.INFINITE);
-        moveAnimation.setDuration(4000);
-        //loginlogo.setAnimation(moveAnimation);
+        try {
+            setContentView(R.layout.profile);
+        } catch (Exception e) {
+            Log.e("sibal", e.toString());
+        }
+        cloud1 = (ImageView) findViewById(R.id.cloud1);
+        cloud2 = (ImageView) findViewById(R.id.cloud2);
+        cloud3 = (ImageView) findViewById(R.id.cloud3);
 
 
 
+        background = (ImageView) findViewById(R.id.background);
         logbtn = (Button) findViewById(R.id.Loginbtn);
         Drawable buttonBg = logbtn.getBackground();
         buttonBg.setAlpha(50);
-        webServerSender = new WebServerSender("http://linux.kim82536.pe.kr:5000", "login", "POST");
+        webServerSender = new WebServerSender("http://linux.kim82536.pe.kr:5000", "profile", "POST");
         Join = (TextView) findViewById(R.id.join);
         Join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myintent;
-                myintent = new Intent(getApplicationContext(), JoinActivity.class);
+                myintent = new Intent(getApplicationContext(), JoinFragment.class);
                 startActivity(myintent);
-                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-
             }
         });
         logbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-                Sendmsg sendmsg = new Sendmsg();
                 idE = (EditText) findViewById(R.id.id_input);
+                Sendmsg sendmsg = new Sendmsg();
                 id = idE.getText().toString();
                 passE = (EditText) findViewById(R.id.pw_input);
                 pass = passE.getText().toString();
@@ -79,7 +153,6 @@ public class LoginActivity extends ActionBarActivity {
                 webServerSender.add("password", pass);
 
                 sendmsg.execute();
-
             }
         });
     }

@@ -20,7 +20,7 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        int position = parent.getChildAdapterPosition(view); // item position
+        int position = parent.getChildPosition(view); // item position
         int column = position % spanCount; // item column
 
         if (position != 0) {

@@ -4,8 +4,6 @@ import android.graphics.Typeface;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.HashMap;
-
 /**
  * Created by YUM on 2015-09-11.
  */

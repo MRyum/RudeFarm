@@ -1,7 +1,6 @@
 package com.example.yum.rudefarm;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -36,7 +35,7 @@ public class SplashActivity extends ActionBarActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i("test","onDestroy()");
+        Log.i("test", "onDestroy()");
         mHandler.removeCallbacks(mRunable);
     }
 
