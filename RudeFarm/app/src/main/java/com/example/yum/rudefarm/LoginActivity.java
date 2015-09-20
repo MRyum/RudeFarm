@@ -82,11 +82,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-<<<<<<< HEAD
-	super.onPause();
-=======
         super.onPause();
->>>>>>> YUM
         background = (ImageView) findViewById(R.id.background);
         ((BitmapDrawable) background.getDrawable()).getBitmap().recycle();
         ImageView[] dum = {cloud1, cloud2, cloud3};
