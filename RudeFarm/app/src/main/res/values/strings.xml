@@ -3,4 +3,15 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
 </resources>
+=======
+
+    <string name="join"><u><b>회원가입</b></u></string>
+    <string name="title_activity_login">loginActivity</string>
+    <string name="title_activity_main">mainAcitivity</string>
+    <string name="title_activity_join">joinAcivity</string>
+    <string name="title_activity_splash">splashActivity</string>
+
+</resources>
+>>>>>>> YUM
