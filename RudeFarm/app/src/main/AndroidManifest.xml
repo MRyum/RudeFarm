@@ -28,6 +28,12 @@
             android:name=".JoinActivity"
             android:label="@string/title_activity_join" >
         </activity>
+        <activity android:name=".BaseInfoActivity">
+
+        </activity>
+        <activity android:name=".FindPasswordActivity">
+
+        </activity>
     </application>
 
 </manifest>

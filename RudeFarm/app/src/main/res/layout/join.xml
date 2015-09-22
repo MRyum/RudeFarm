@@ -1,14 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_background">
 
-    <ImageView
-        android:id="@+id/joinbg"
+    <include
+        android:id="@+id/join_toolbar"
+        layout="@layout/join_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@mipmap/login_background" />
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/login_logo"
@@ -18,11 +18,10 @@
         android:layout_marginTop="50dp"
         android:src="@mipmap/login_logo" />
 
-
     <LinearLayout
         android:id="@+id/name"
         android:layout_width="310dp"
-        android:layout_height="40dp"
+        android:layout_height="45dp"
         android:layout_below="@+id/login_logo"
         android:layout_centerHorizontal="true"
         android:background="@drawable/border_hard"
@@ -34,17 +33,17 @@
             android:layout_gravity="left"
             android:text="이름"
             android:textColor="#fff"
-            android:textSize="9dp" />
+            android:textSize="12dp" />
 
         <EditText
-            android:id="@+id/id_input"
+            android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#00000000"
             android:maxLength="20"
             android:singleLine="true"
-            android:textSize="10dp"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10dp" />
     </LinearLayout>
 
     <TextView
@@ -54,7 +53,7 @@
         android:layout_alignTop="@+id/ymd"
         android:text="생년월일"
         android:textColor="#fff"
-        android:textSize="9dp" />
+        android:textSize="12dp" />
 
     <RelativeLayout
         android:id="@+id/ymd"
@@ -62,7 +61,6 @@
         android:layout_height="45dp"
         android:layout_below="@+id/name"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border_hard"
         android:paddingTop="10dp">
 
         <Spinner
@@ -95,10 +93,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:text="이메일(아이디)"
             android:textColor="#fff"
-            android:textSize="9dp" />
+            android:textSize="12dp" />
 
         <EditText
             android:id="@+id/email_input"
@@ -106,9 +103,9 @@
             android:layout_height="match_parent"
             android:background="#00000000"
             android:maxLength="20"
-            android:textSize="10dp"
             android:singleLine="true"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -123,10 +120,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:text="비밀번호"
             android:textColor="#fff"
-            android:textSize="9dp" />
+            android:textSize="12dp" />
 
         <EditText
             android:id="@+id/pw_input"
@@ -134,43 +130,43 @@
             android:layout_height="match_parent"
             android:background="#00000000"
             android:inputType="textPassword"
-            android:textSize="10dp"
             android:maxLength="20"
             android:singleLine="true"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="10dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/sex"
-        android:orientation="vertical"
         android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pw"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/border_hard"
-        android:paddingTop="10dp">
+        android:layout_marginBottom="30dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="성별"
             android:textColor="#fff"
-            android:textSize="9dp" />
+            android:textSize="12dp" />
 
         <Spinner
             android:id="@+id/sex_sp"
             android:layout_width="match_parent"
             android:layout_height="30dp"></Spinner>
     </LinearLayout>
+
     <Button
         android:id="@+id/Joinbtn"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_below="@+id/sex"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="#131D49"
-        android:text="회원가입"
+        android:text="다음"
         android:textColor="#FFFFFF"
         android:textSize="15dp" />
 </RelativeLayout>

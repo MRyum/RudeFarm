@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.
 		INJECTED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml
 		INJECTED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml
 application
-ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:5:5-31:19
+ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:5:5-37:19
 MERGED from [com.android.support:appcompat-v7:23.0.1] D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:cardview-v7:21.0.3] D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\AndroidManifest.xml:16:5-19
@@ -63,6 +63,14 @@ ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.
 		ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:29:13-56
 	android:name
 		ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:28:13-41
+activity#com.example.yum.rudefarm.BaseInfoActivity
+ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:31:9-33:20
+	android:name
+		ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:31:19-51
+activity#com.example.yum.rudefarm.FindPasswordActivity
+ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:34:9-36:20
+	android:name
+		ADDED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml:34:19-55
 uses-sdk
 INJECTED from D:\YUM\WORK\Android_wordkspace\RudeFarm\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.0.1] D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:20:5-43

@@ -90,7 +90,7 @@
             android:layout_height="match_parent"
             android:background="#00000000"
             android:inputType="textPassword"
-            android:maxLength="10"
+            android:maxLength="18"
             android:singleLine="true"
             android:textColor="#fff" />
     </LinearLayout>
@@ -134,29 +134,29 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lost_pw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text=""
-        android:textColor="#ffffff"
-        android:textSize="10dp" />
-
-    <LinearLayout
+        android:id="@+id/findpw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fb_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp"
-        android:orientation="horizontal">
+        android:text="비밀번호를 잊어버리셨나요?"
+        android:textColor="#ffffff"
+        android:textSize="13dp" />s
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/findpw"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀번호를 잊어버리셨나요"
-            android:textColor="#ffffff"
-            android:textSize="10dp" />s
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:text="아직 회원이 아니신가요?"/>
 
         <TextView
             android:id="@+id/join"
@@ -165,7 +165,7 @@
             android:layout_marginLeft="5dp"
             android:text="@string/join"
             android:textColor="#ffffff"
-            android:textSize="12dp" />
+            android:textSize="13dp" />
 
     </LinearLayout>
 

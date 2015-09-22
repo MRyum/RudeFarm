@@ -34,6 +34,10 @@
             android:name="com.example.yum.rudefarm.JoinActivity"
             android:label="@string/title_activity_join" >
         </activity>
+        <activity android:name="com.example.yum.rudefarm.BaseInfoActivity" >
+        </activity>
+        <activity android:name="com.example.yum.rudefarm.FindPasswordActivity" >
+        </activity>
         <activity
             android:name="android.support.v7.widget.TestActivity"
             android:label="RecyclerViewTestActivity" />

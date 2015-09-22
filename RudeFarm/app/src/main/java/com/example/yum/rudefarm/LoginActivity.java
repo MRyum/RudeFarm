@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     ImageView cloud2;
     ImageView cloud3;
     ImageView background;
+    TextView findPw;
+    TextView join;
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -107,7 +109,24 @@ public class LoginActivity extends AppCompatActivity {
         cloud2 = (ImageView) findViewById(R.id.cloud2);
         cloud3 = (ImageView) findViewById(R.id.cloud3);
 
+        findPw = (TextView) findViewById(R.id.findpw);
+        join = (TextView) findViewById(R.id.join);
 
+        join.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(i);
+            }
+        });
+
+        findPw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, FindPasswordActivity.class);
+                startActivity(i);
+            }
+        });
 
         background = (ImageView) findViewById(R.id.background);
         logbtn = (Button) findViewById(R.id.Loginbtn);
