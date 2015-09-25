@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/login_background"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="55dp"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/login_propile"/>
+
+
+    <LinearLayout
+        android:id="@+id/nickname_li"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/profile_img"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="닉네임(이름)"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/nickname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:maxLength="6"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/farmname_li"
+        android:layout_below="@+id/nickname_li"
+        android:layout_width="310dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_hard"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="농장이름"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <EditText
+            android:id="@+id/farmname"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:maxLength="20"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Nextbtn"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/farmname_li"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="175dp"
+        android:background="#131D49"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp" />
+
+</RelativeLayout>
