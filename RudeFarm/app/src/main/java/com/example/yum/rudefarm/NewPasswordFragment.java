@@ -32,7 +32,8 @@ public class NewPasswordFragment extends Fragment {
 
     AlertDialog mDialog;
 
-    public NewPasswordFragment() {}
+    public NewPasswordFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class NewPasswordFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.newpassword, container,false);
+        View rootView = inflater.inflate(R.layout.newpassword, container, false);
 
         toolbar = (Toolbar) rootView.findViewById(R.id.fpw_toolbar);
         TextView toolbarText = (TextView) toolbar.getChildAt(0);
@@ -65,8 +66,7 @@ public class NewPasswordFragment extends Fragment {
                 Log.v("test", "Asfd " + newPassword);
                 if (newPassword_et.getText().toString().equals(confirm_et.getText().toString()) &&
                         newPassword_et.getText().length() != 0 && confirm_et.getText().length() != 0) {
-                    Intent i = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(i);
+                    getActivity().finish();
                 } else {
                     mDialog = createDialog();
                     mDialog.show();

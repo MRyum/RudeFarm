@@ -43,7 +43,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -52,7 +52,7 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:src="@mipmap/main_stage" />
 
         <ImageView
@@ -60,14 +60,14 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:scaleType="fitXY" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="210dp"
+            android:layout_marginTop="220dp"
             android:gravity="center_vertical">
 
             <TextView
@@ -91,8 +91,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingBottom="32dp"
-        android:paddingTop="32dp">
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
 
         <TextView
             android:id="@+id/explain"
@@ -105,6 +105,7 @@
             android:id="@+id/cast_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
             android:text="버릇캐스트"
             android:textSize="25dp" />
     </LinearLayout>

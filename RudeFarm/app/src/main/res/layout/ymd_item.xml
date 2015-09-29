@@ -3,7 +3,7 @@
     android:id="@+id/dropdowntext"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
+    android:paddingLeft="1dp"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
-    android:paddingLeft="2dp"
     android:textSize="12dp" />

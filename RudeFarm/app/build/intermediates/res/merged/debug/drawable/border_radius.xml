@@ -5,16 +5,12 @@
     <!-- view background color -->
     <solid android:color="#fff"></solid>
 
-    <!-- view border color and width -->
-    <stroke
-        android:width="3dp"></stroke>
-
     <!-- If you want to add some padding -->
     <padding
-        android:bottom="1dp"
-        android:left="1dp"
-        android:right="1dp"
-        android:top="1dp"></padding>
+        android:bottom="3dp"
+        android:left="15dp"
+        android:right="15dp"
+        android:top="3dp"></padding>
 
     <!-- Here is the corner radius -->
     <corners android:radius="200dp"></corners>

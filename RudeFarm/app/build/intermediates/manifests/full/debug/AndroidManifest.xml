@@ -10,8 +10,10 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.yum.rudefarm.SplashActivity"
@@ -24,19 +26,21 @@
         </activity>
         <activity
             android:name="com.example.yum.rudefarm.LoginActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name" />
         <activity
             android:name="com.example.yum.rudefarm.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name="com.example.yum.rudefarm.JoinActivity"
-            android:label="@string/title_activity_join" >
+            android:label="@string/title_activity_join" />
+        <activity android:name="com.example.yum.rudefarm.BaseInfoActivity" />
+        <activity android:name="com.example.yum.rudefarm.FindPasswordActivity" />
+        <activity android:name="com.example.yum.rudefarm.CheckListAcitivity" >
         </activity>
-        <activity android:name="com.example.yum.rudefarm.BaseInfoActivity" >
-        </activity>
-        <activity android:name="com.example.yum.rudefarm.FindPasswordActivity" >
+        <activity
+            android:name="com.example.yum.rudefarm.StoreActivity"
+            android:label="@string/title_activity_store" >
         </activity>
         <activity
             android:name="android.support.v7.widget.TestActivity"

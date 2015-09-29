@@ -98,9 +98,9 @@ public class BaseInfoActivity extends Activity implements View.OnClickListener {
                     mDialog = createDialog();
                     mDialog.show();
                 } else {
-                    Intent i = new Intent(BaseInfoActivity.this, LoginActivity.class);
+                    //Intent i = new Intent(BaseInfoActivity.this, LoginActivity.class);
                     finish();
-                    startActivity(i);
+                    //startActivity(i);
                 }
             }
         });
@@ -166,7 +166,6 @@ public class BaseInfoActivity extends Activity implements View.OnClickListener {
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         startActivityForResult(intent, PICK_FROM_ALBUM);
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != RESULT_OK) {

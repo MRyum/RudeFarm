@@ -10,5 +10,6 @@
     <string name="title_activity_main">mainAcitivity</string>
     <string name="title_activity_join">joinAcivity</string>
     <string name="title_activity_splash">splashActivity</string>
+    <string name="title_activity_store">StoreActivity</string>
 
 </resources>

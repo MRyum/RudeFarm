@@ -1,6 +1,7 @@
 package com.example.yum.rudefarm;
 
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,10 +19,19 @@ public class MainAdapter extends RecyclerView.Adapter {
 
     private List<String> stringList;
     private List<Integer> imageList;
+    private String point;
+    private String level;
+    private String farm_name;
+    private int animal;
 
-    public MainAdapter(List data, List Image) {
-        stringList = data;
-        imageList = Image;
+    public MainAdapter(List castData, List castImage, String farmName, int point, int level, int animal) {
+        stringList = castData;
+        imageList = castImage;
+
+        this.farm_name = farmName;
+        this.point = String.valueOf(point);
+        this.level = String.valueOf(level);
+        this.animal = animal;
     }
 
 
@@ -43,6 +53,7 @@ public class MainAdapter extends RecyclerView.Adapter {
 
         View itemview;
 
+        int type;
 
         public ViewHolder(View itemView, int viewType) {
             super(itemView);
@@ -56,11 +67,16 @@ public class MainAdapter extends RecyclerView.Adapter {
                 cast = (TextView) itemView.findViewById(R.id.cast_text);
                 explain = (TextView) itemView.findViewById(R.id.explain);
                 itemview = itemView;
+
+                type = HEADER;
             } else if (viewType == ITEM) {
                 textView = (TextView) itemView.findViewById(
                         R.id.card_text);
                 imageView = (ImageView) itemView.findViewById(R.id.card_img);
                 itemview = itemView;
+
+                type = ITEM;
+
             }
 
         }
@@ -84,13 +100,49 @@ public class MainAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+
+        final ViewHolder h = ((ViewHolder) holder);
+
+        if (h.type == HEADER) {
+            Typefaces.setFont("BM-JUA.ttf", h.cast, ((ViewHolder) holder).itemview);
+            Typefaces.setFont("KoPubDotumLight.ttf", h.explain, ((ViewHolder) holder).itemview);
+            Typefaces.setFont("BM-JUA.ttf", h.point, ((ViewHolder) holder).itemview);
+            Typefaces.setFont("BM-JUA.ttf", h.level, ((ViewHolder) holder).itemview);
+            Typefaces.setFont("BM-JUA.ttf", h.farm_id, ((ViewHolder) holder).itemview);
+
+            h.point.setText(point);
+            h.level.setText("Lv. "+ level);
+            h.farm_id.setText(farm_name);
+            h.animal.setImageResource(animal);
+
+            h.store.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(v.getContext(), StoreActivity.class);
+                    (v.getContext()).startActivity(i);
+                }
+            });
+
+        } else if (h.type == ITEM) {
+            Typefaces.setFont("KoPubDotumLight.ttf", h.textView, ((ViewHolder) holder).itemview);
+
+            h.textView.setText(stringList.get(position));
+            h.imageView.setImageResource(imageList.get(position));
+        }
 
     }
 
     @Override
     public int getItemCount() {
         return stringList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (isPositionHeader(position))
+            return 0;
+        return 1;
     }
 
     private boolean isPositionHeader(int position) {

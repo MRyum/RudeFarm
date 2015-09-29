@@ -19,6 +19,8 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 
 public class FindPasswordActivity extends AppCompatActivity {
@@ -70,13 +72,14 @@ public class FindPasswordActivity extends AppCompatActivity {
         day = (Spinner) findViewById(R.id.d_sp);
         list1 = new ArrayList<>();
         int yearData = 1940;
-        int i = 1;
+        int i = 0;
         while (true) {
             list1.add(String.valueOf(yearData + i));
             if ((yearData + i) == dates)
                 break;
             i++;
         }
+        Collections.reverse(list1);
         adapter = new ArrayAdapter<String>(this, R.layout.ymd_item, list1);
         year.setAdapter(adapter);
 
