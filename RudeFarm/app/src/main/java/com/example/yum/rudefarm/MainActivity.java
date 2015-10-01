@@ -1,9 +1,11 @@
 package com.example.yum.rudefarm;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,13 +14,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
@@ -76,13 +81,13 @@ public class MainActivity extends AppCompatActivity {
         }
         v.setLayoutParams(params);
     }
-
     //init이 앞에 붙은 함수는 데이터나 변수 초기화하는 함수이다 이름대로 할 테니 보기 편할것이다. 히히
     //보기 편하라고 만듦. 이곳은 데이터의 초기화하는 곳, 서버에서 데이터를 받아와 저장할때 이곳을 사용하기 바람.
     public void initData() {
         farmName = "다리꼬지마 다다리";
         level = 7;
         point = 4100;
+        animal = R.mipmap.chicken;
 
         castText = new ArrayList<String>();
         castImage = new ArrayList<Integer>();
@@ -102,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
                 R.mipmap.menu_group, R.mipmap.menu_rank, R.mipmap.menu_search, R.mipmap.menu_setting};
         NAME = "유예권";
         EMAIL = "yyg8291@naver.com";
-        animal = R.mipmap.chicken;
 
 
 
@@ -116,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getBackgroundColor(toolbar));
         }
+        TextView toolbarText = (TextView) toolbar.getChildAt(0);
+        Typefaces.setFont("BM-JUA.ttf", toolbarText, toolbar);
         int noOfChild = toolbar.getChildCount();
         View view;
 //        toolbar.setTranslationY(-300);
@@ -135,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
     }
     public void initMainList() {
-        mainAdapter = new MainAdapter(castText, castImage, farmName, point, level, animal);
+        mainAdapter = new MainAdapter(this, Drawer, castText, castImage, farmName, point, level, animal);
         content_list = (RecyclerView) findViewById(R.id.content_list);
         MainLayoutManager = new GridLayoutManager(this, 2);
         ((GridLayoutManager) MainLayoutManager).setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
@@ -147,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
         content_list.setLayoutManager(MainLayoutManager);
         content_list.setHasFixedSize(true);
         content_list.setAdapter(mainAdapter);
-
-
         content_list.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -158,14 +162,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 if (dy > 0 && dy <= 500) {
-                    float offset = (float)dy / 500.0f;
+                    float offset = (float) dy / 500.0f;
                     toolbar.setVisibility(View.VISIBLE);
                     Animate(toolbar, 1, getResources().getDimension(R.dimen.toolbarHeight), (1 - offset));
                     Log.v("scroll", String.valueOf("오프셋 : " + offset + " 디와이 : " + dy));
-                }
-                else if( dy < 0 ){
-                    if(dy >= -500){
-                        float offset = (float)dy/-500.0f;
+                } else if (dy < 0) {
+                    if (dy >= -500) {
+                        float offset = (float) dy / -500.0f;
                         toolbar.setVisibility(View.GONE);
 //                        Animate(toolbar, 1, getResources().getDimension(R.dimen.marginToolbarHeight), offset);
                     }
@@ -222,28 +225,14 @@ public class MainActivity extends AppCompatActivity {
 
         initData();
         initToolbar();
+        initNavigation();
         initNavigationList();
         initMainList();
-        initNavigation();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        return false;
+    public void open()
+    {
+        Drawer.openDrawer(Gravity.LEFT);
     }
 
-    public void DisplayMove() {
-
-
-    }
 }

@@ -2,53 +2,11 @@
 <items version="2" >
 
     <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-41c302249145f6e7dee329172650304fe702213e.jar" />
-    </item>
-    <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="00b0b7233e1ec64acebfac40d4983d32d4712426">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-1875b88e19e0d9e7c40e500ed8418630ee4cd314.jar" />
-    </item>
-    <item
-        jar="C:\Users\YUM\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-c5f68c2fa140da4fe73c6d591754c0bcbfd2a8db.jar" />
-    </item>
-    <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-4af0f9ed31219a38d41e74e84322846164a1d465.jar" />
-    </item>
-    <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-6da73693212cef906fb7bfd81cc8025d62929286.jar" />
-    </item>
-    <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4b8945fc23a7461c6fdde15753456d64b0a9358b">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-f1dae63daf7a2d2bfd40e3847fe8e1acf377cb08.jar" />
-    </item>
-    <item
-        jar="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-6c72dcb1f01838e5003fdb9bde8683409458525d.jar" />
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="D:\YUM\WORK\Android_wordkspace\RudeFarm\app\build\intermediates\pre-dexed\debug\classes-f20360530a85655f745b9098b5a83f4a76f9c072.jar" />
     </item>
 
 </items>

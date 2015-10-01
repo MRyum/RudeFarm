@@ -18,6 +18,14 @@
             android:src="@mipmap/background" />
 
         <ImageView
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/button_menu"/>
+
+        <ImageView
             android:id="@+id/store"
             android:layout_width="25dp"
             android:layout_height="20dp"
@@ -28,8 +36,8 @@
 
         <LinearLayout
             android:id="@+id/point_layout"
-            android:layout_width="75dp"
-            android:layout_height="25dp"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:layout_toLeftOf="@+id/store"
@@ -42,8 +50,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginRight="21dp"
+                android:layout_marginTop="2dp"
                 android:textSize="15dp" />
         </LinearLayout>
 
@@ -67,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="218dp"
             android:gravity="center_vertical">
 
             <TextView

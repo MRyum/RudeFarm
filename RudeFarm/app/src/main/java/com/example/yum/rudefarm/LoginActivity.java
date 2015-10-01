@@ -100,6 +100,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        startActivity(new Intent(LoginActivity.this, SplashActivity.class));
+
         try {
             setContentView(R.layout.login);
         } catch (Exception e) {

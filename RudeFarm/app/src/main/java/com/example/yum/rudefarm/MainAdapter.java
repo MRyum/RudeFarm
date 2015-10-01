@@ -1,8 +1,11 @@
 package com.example.yum.rudefarm;
 
 
+import android.app.Activity;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +27,10 @@ public class MainAdapter extends RecyclerView.Adapter {
     private String farm_name;
     private int animal;
 
-    public MainAdapter(List castData, List castImage, String farmName, int point, int level, int animal) {
+    private DrawerLayout mDrawerLayout;
+    private Activity activity;
+
+    public MainAdapter(Activity activity, DrawerLayout mDrawerLayout, List castData, List castImage, String farmName, int point, int level, int animal) {
         stringList = castData;
         imageList = castImage;
 
@@ -32,6 +38,9 @@ public class MainAdapter extends RecyclerView.Adapter {
         this.point = String.valueOf(point);
         this.level = String.valueOf(level);
         this.animal = animal;
+
+        this.mDrawerLayout = mDrawerLayout;
+        this.activity = activity;
     }
 
 
@@ -50,6 +59,7 @@ public class MainAdapter extends RecyclerView.Adapter {
         TextView cast;
         TextView explain;
 
+        ImageView menuButton;
 
         View itemview;
 
@@ -66,6 +76,9 @@ public class MainAdapter extends RecyclerView.Adapter {
 
                 cast = (TextView) itemView.findViewById(R.id.cast_text);
                 explain = (TextView) itemView.findViewById(R.id.explain);
+
+                menuButton = (ImageView) itemView.findViewById(R.id.menuButton);
+
                 itemview = itemView;
 
                 type = HEADER;
@@ -112,7 +125,7 @@ public class MainAdapter extends RecyclerView.Adapter {
             Typefaces.setFont("BM-JUA.ttf", h.farm_id, ((ViewHolder) holder).itemview);
 
             h.point.setText(point);
-            h.level.setText("Lv. "+ level);
+            h.level.setText("Lv."+ level);
             h.farm_id.setText(farm_name);
             h.animal.setImageResource(animal);
 
@@ -121,6 +134,13 @@ public class MainAdapter extends RecyclerView.Adapter {
                 public void onClick(View v) {
                     Intent i = new Intent(v.getContext(), StoreActivity.class);
                     (v.getContext()).startActivity(i);
+                }
+            });
+
+            h.menuButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((MainActivity)activity).open();
                 }
             });
 
@@ -148,4 +168,6 @@ public class MainAdapter extends RecyclerView.Adapter {
     private boolean isPositionHeader(int position) {
         return position == 0;
     }
+
+
 }
